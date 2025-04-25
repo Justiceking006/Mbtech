@@ -8,33 +8,43 @@
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Fonts & Styling -->
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     body {
       font-family: 'Poppins', sans-serif;
     }
 
-    /* Smooth slide animations */
-    .slide-in {
-      transform: translateX(0);
+    /* Loop scroll animation */
+    @keyframes slideUpLoop {
+      0% { transform: translateY(0%); }
+      100% { transform: translateY(-100%); }
     }
-    .slide-out {
-      transform: translateX(-100%);
+
+    .slider-vertical {
+      animation: slideUpLoop 12s linear infinite;
+    }
+
+    .hamburger.active .bar1 {
+      transform: rotate(45deg) translateY(6px);
+    }
+
+    .hamburger.active .bar2 {
+      opacity: 0;
+    }
+
+    .hamburger.active .bar3 {
+      transform: rotate(-45deg) translateY(-6px);
     }
   </style>
 </head>
 <body class="bg-white text-gray-800 scroll-smooth overflow-x-hidden">
 
-  <!-- HEADER / NAVBAR GOES HERE -->
-
- <!-- HEADER COMPONENT -->
+<!-- ====== HEADER ====== -->
 <header class="fixed top-0 left-0 w-full z-50 bg-white shadow-md">
   <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
-    <!-- LOGO -->
     <h1 class="text-2xl font-bold text-amber-500">Mbtec-Groups</h1>
 
-    <!-- Desktop Nav -->
     <nav class="hidden md:flex gap-8 font-medium text-gray-800">
       <a href="#" class="hover:text-amber-500 transition">Home</a>
       <a href="#" class="hover:text-amber-500 transition">Services</a>
@@ -44,47 +54,41 @@
     </nav>
 
     <!-- Hamburger Button -->
-    <button id="menuToggle" class="md:hidden text-gray-700 focus:outline-none">
-      <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2"
-           viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round"
-              d="M4 6h16M4 12h16M4 18h16"/>
-      </svg>
+    <button id="menuToggle" class="hamburger md:hidden focus:outline-none">
+      <div class="w-7 h-5 flex flex-col justify-between">
+        <span class="bar1 block h-1 bg-gray-700 rounded transition"></span>
+        <span class="bar2 block h-1 bg-gray-700 rounded transition"></span>
+        <span class="bar3 block h-1 bg-gray-700 rounded transition"></span>
+      </div>
     </button>
   </div>
 </header>
 
-<!-- SLIDE-OUT MOBILE MENU -->
+<!-- ====== MOBILE MENU ====== -->
 <div id="mobileNav" class="fixed top-0 left-0 h-full w-64 bg-white shadow-xl z-40 transform -translate-x-full transition-transform duration-300 md:hidden">
   <div class="p-6">
     <h2 class="text-xl font-semibold text-amber-500 mb-4">Menu</h2>
     <ul class="space-y-4 text-gray-700 text-lg">
-      <li><a href="#" class="block hover:text-amber-500"> Home</a></li>
-      <li><a href="#" class="block hover:text-amber-500"> Services</a></li>
-      <li><a href="#" class="block hover:text-amber-500"> Projects</a></li>
-      <li><a href="#" class="block hover:text-amber-500"> About</a></li>
-      <li><a href="#" class="block hover:text-amber-500"> Contact</a></li>
+      <li><a href="#" class="block hover:text-amber-500">Home</a></li>
+      <li><a href="#" class="block hover:text-amber-500">Services</a></li>
+      <li><a href="#" class="block hover:text-amber-500">Projects</a></li>
+      <li><a href="#" class="block hover:text-amber-500">About</a></li>
+      <li><a href="#" class="block hover:text-amber-500">Contact</a></li>
     </ul>
   </div>
 </div>
-
-<!-- OVERLAY -->
 <div id="overlay" class="fixed inset-0 bg-black bg-opacity-40 hidden z-30 md:hidden"></div>
 
-  <!-- MAIN SECTIONS PLACEHOLDER -->
-  <main class="pt-20">
-    <!-- Hero Section -->
-    <!-- HERO SECTION -->
-<section class="relative w-full h-screen bg-cover bg-center flex items-center justify-center px-4 pt-24"
+<!-- ====== HERO SECTION ====== -->
+<section class="relative w-full h-screen bg-cover bg-center flex items-center justify-center px-4 mt-[65px]"
          style="background-image: url('https://images.pexels.com/photos/8853502/pexels-photo-8853502.jpeg');">
 
-  <!-- Overlay for dark shade -->
+  <!-- Dark Overlay -->
   <div class="absolute inset-0 bg-black/60"></div>
 
-  <!-- Content -->
   <div class="relative z-10 max-w-7xl w-full grid md:grid-cols-2 gap-10 items-center">
     
-    <!-- LEFT: TEXT BLOCK -->
+    <!-- TEXT LEFT -->
     <div class="text-white">
       <h5 class="text-amber-500 text-sm uppercase tracking-widest mb-2">Trusted Energy Partner</h5>
       <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-4">Empowering Africa<br>with Clean Solar Energy</h1>
@@ -101,15 +105,13 @@
       </div>
     </div>
 
-    <!-- RIGHT: 2-COLUMN VERTICAL CAROUSEL -->
-    <div class="hidden md:grid grid-cols-2 gap-4 max-h-[400px] overflow-hidden relative">
-      <div class="animate-slideUp space-y-4">
-        <img src="https://images.pexels.com/photos/8853502/pexels-photo-8853502.jpeg" class="rounded-2xl shadow-lg object-cover w-full h-48">
-        <img src="https://images.pexels.com/photos/8853532/pexels-photo-8853532.jpeg" class="rounded-2xl shadow-lg object-cover w-full h-48">
-      </div>
-      <div class="animate-slideUp delay-500 space-y-4">
-        <img src="https://images.pexels.com/photos/7615614/pexels-photo-7615614.jpeg" class="rounded-2xl shadow-lg object-cover w-full h-48">
-        <video class="rounded-2xl shadow-lg object-cover w-full h-48" autoplay muted loop>
+    <!-- SLIDER RIGHT -->
+    <div class="hidden md:block max-h-[400px] overflow-hidden rounded-2xl shadow-xl">
+      <div class="space-y-4 slider-vertical">
+        <img src="https://images.pexels.com/photos/8853502/pexels-photo-8853502.jpeg" class="rounded-2xl object-cover w-full h-48" />
+        <img src="https://images.pexels.com/photos/8853532/pexels-photo-8853532.jpeg" class="rounded-2xl object-cover w-full h-48" />
+        <img src="https://images.pexels.com/photos/7615614/pexels-photo-7615614.jpeg" class="rounded-2xl object-cover w-full h-48" />
+        <video class="rounded-2xl object-cover w-full h-48" autoplay muted loop>
           <source src="https://videos.pexels.com/video-files/8559846/8559846-hd_1920_1080_30fps.mp4" type="video/mp4">
         </video>
       </div>
@@ -117,49 +119,26 @@
   </div>
 </section>
 
-<!-- CSS ANIMATION -->
-<style>
-  @keyframes slideUp {
-    0% { transform: translateY(100%); }
-    100% { transform: translateY(0); }
-  }
-  .animate-slideUp {
-    animation: slideUp 8s infinite alternate ease-in-out;
-  }
-  .delay-500 {
-    animation-delay: 4s;
-  }
-</style>
-
-    <!-- Services -->
-    <!-- About -->
-    <!-- Gallery -->
-    <!-- Contact -->
-  </main>
-
-  <!-- FOOTER PLACEHOLDER -->
-
-  <!-- Mobile Nav Script -->
-<!-- JS FOR TOGGLING MENU -->
+<!-- ====== JS FOR MOBILE MENU ====== -->
 <script>
   const btn = document.getElementById("menuToggle");
   const mobileNav = document.getElementById("mobileNav");
   const overlay = document.getElementById("overlay");
 
   btn.addEventListener("click", () => {
-    mobileNav.classList.remove("-translate-x-full");
-    mobileNav.classList.add("translate-x-0");
-    overlay.classList.remove("hidden");
+    mobileNav.classList.toggle("-translate-x-full");
+    mobileNav.classList.toggle("translate-x-0");
+    overlay.classList.toggle("hidden");
+    btn.classList.toggle("active"); // Toggle hamburger animation
   });
 
   overlay.addEventListener("click", () => {
-    mobileNav.classList.remove("translate-x-0");
     mobileNav.classList.add("-translate-x-full");
+    mobileNav.classList.remove("translate-x-0");
     overlay.classList.add("hidden");
+    btn.classList.remove("active");
   });
-
-  
 </script>
- 
+
 </body>
 </html>
