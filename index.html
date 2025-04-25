@@ -1,1 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mbtec-Groups | Solar & Electrical Installation</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
 
+    .slide-in {
+      transform: translateX(0);
+    }
+    .slide-out {
+      transform: translateX(-100%);
+    }
+  </style>
+</head>
+<body class="bg-white text-gray-800 scroll-smooth relative overflow-x-hidden">
+
+  <!-- Header -->
+  <header class="bg-white shadow-md fixed w-full z-50">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
+      <!-- Logo -->
+      <h1 class="text-xl sm:text-2xl font-bold text-red-600">Mbtec-Groups</h1>
+
+      <!-- Hamburger Menu Button -->
+      <button id="menuToggle" class="sm:hidden text-red-600 focus:outline-none">
+        <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2"
+          viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden sm:flex space-x-6 font-medium text-gray-700">
+        <a href="#" class="hover:text-red-600 transition">Home</a>
+        <a href="#" class="hover:text-red-600 transition">Services</a>
+        <a href="#" class="hover:text-red-600 transition">About</a>
+        <a href="#" class="hover:text-red-600 transition">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Mobile Sidebar Navigation -->
+  <div id="mobileNav" class="fixed top-0 left-0 h-full w-64 bg-white text-gray-800 shadow-lg z-40 transform transition-transform duration-300 slide-out sm:hidden">
+    <div class="p-6">
+      <h2 class="text-2xl font-bold text-red-600 mb-6">Menu</h2>
+      <ul class="space-y-4 text-lg">
+        <li><a href="#" class="block hover:text-red-600 transition">🏠 Home</a></li>
+        <li><a href="#" class="block hover:text-red-600 transition">🔌 Services</a></li>
+        <li><a href="#" class="block hover:text-red-600 transition">ℹ️ About</a></li>
+        <li><a href="#" class="block hover:text-red-600 transition">📞 Contact</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Overlay (dim background when menu is open) -->
+  <div id="overlay" class="fixed inset-0 bg-black bg-opacity-40 hidden z-30 sm:hidden"></div>
+
+  <!-- JS: Menu Toggle -->
+  <script>
+    const menuBtn = document.getElementById("menuToggle");
+    const mobileNav = document.getElementById("mobileNav");
+    const overlay = document.getElementById("overlay");
+
+    menuBtn.addEventListener("click", () => {
+      mobileNav.classList.remove("slide-out");
+      mobileNav.classList.add("slide-in");
+      overlay.classList.remove("hidden");
+    });
+
+    overlay.addEventListener("click", () => {
+      mobileNav.classList.remove("slide-in");
+      mobileNav.classList.add("slide-out");
+      overlay.classList.add("hidden");
+    });
+  </script>
+
+  <!-- Content Spacer -->
+  <div class="pt-20 text-center">
+    <h2 class="text-2xl font-bold text-red-600">Welcome to Mbtec-Groups!</h2>
+    <p class="text-gray-600">This is where your frontend showcase begins. 🚀</p>
+  </div>
+</body>
+</html>
