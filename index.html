@@ -59,11 +59,11 @@
   <div class="p-6">
     <h2 class="text-xl font-semibold text-amber-500 mb-4">Menu</h2>
     <ul class="space-y-4 text-gray-700 text-lg">
-      <li><a href="#" class="block hover:text-amber-500">🏠 Home</a></li>
-      <li><a href="#" class="block hover:text-amber-500">🔧 Services</a></li>
-      <li><a href="#" class="block hover:text-amber-500">🏗️ Projects</a></li>
-      <li><a href="#" class="block hover:text-amber-500">ℹ️ About</a></li>
-      <li><a href="#" class="block hover:text-amber-500">📞 Contact</a></li>
+      <li><a href="#" class="block hover:text-amber-500"> Home</a></li>
+      <li><a href="#" class="block hover:text-amber-500"> Services</a></li>
+      <li><a href="#" class="block hover:text-amber-500"> Projects</a></li>
+      <li><a href="#" class="block hover:text-amber-500"> About</a></li>
+      <li><a href="#" class="block hover:text-amber-500"> Contact</a></li>
     </ul>
   </div>
 </div>
@@ -71,12 +71,66 @@
 <!-- OVERLAY -->
 <div id="overlay" class="fixed inset-0 bg-black bg-opacity-40 hidden z-30 md:hidden"></div>
 
-
- 
-
   <!-- MAIN SECTIONS PLACEHOLDER -->
   <main class="pt-20">
     <!-- Hero Section -->
+    <!-- HERO SECTION -->
+<section class="relative w-full h-screen bg-cover bg-center flex items-center justify-center px-4 pt-24"
+         style="background-image: url('https://images.pexels.com/photos/8853502/pexels-photo-8853502.jpeg');">
+
+  <!-- Overlay for dark shade -->
+  <div class="absolute inset-0 bg-black/60"></div>
+
+  <!-- Content -->
+  <div class="relative z-10 max-w-7xl w-full grid md:grid-cols-2 gap-10 items-center">
+    
+    <!-- LEFT: TEXT BLOCK -->
+    <div class="text-white">
+      <h5 class="text-amber-500 text-sm uppercase tracking-widest mb-2">Trusted Energy Partner</h5>
+      <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-4">Empowering Africa<br>with Clean Solar Energy</h1>
+      <p class="text-lg text-gray-200 mb-6 space-y-2">
+        <span class="block">We install cutting-edge solar panels,</span>
+        <span class="block">build reliable electrical systems,</span>
+        <span class="block">and manage full site energy solutions.</span>
+        <span class="block">From urban to rural power needs,</span>
+        <span class="block">Mbtec-Groups powers it all sustainably.</span>
+      </p>
+      <div class="flex gap-4 flex-wrap">
+        <a href="https://wa.me/2348153853972" target="_blank" class="bg-green-500 text-white px-5 py-2 rounded-full shadow hover:bg-green-600 transition">📞 Contact WhatsApp</a>
+        <a href="#services" class="bg-amber-500 text-white px-5 py-2 rounded-full shadow hover:bg-amber-600 transition">⚡ Explore</a>
+      </div>
+    </div>
+
+    <!-- RIGHT: 2-COLUMN VERTICAL CAROUSEL -->
+    <div class="hidden md:grid grid-cols-2 gap-4 max-h-[400px] overflow-hidden relative">
+      <div class="animate-slideUp space-y-4">
+        <img src="https://images.pexels.com/photos/8853502/pexels-photo-8853502.jpeg" class="rounded-2xl shadow-lg object-cover w-full h-48">
+        <img src="https://images.pexels.com/photos/8853532/pexels-photo-8853532.jpeg" class="rounded-2xl shadow-lg object-cover w-full h-48">
+      </div>
+      <div class="animate-slideUp delay-500 space-y-4">
+        <img src="https://images.pexels.com/photos/7615614/pexels-photo-7615614.jpeg" class="rounded-2xl shadow-lg object-cover w-full h-48">
+        <video class="rounded-2xl shadow-lg object-cover w-full h-48" autoplay muted loop>
+          <source src="https://videos.pexels.com/video-files/8559846/8559846-hd_1920_1080_30fps.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CSS ANIMATION -->
+<style>
+  @keyframes slideUp {
+    0% { transform: translateY(100%); }
+    100% { transform: translateY(0); }
+  }
+  .animate-slideUp {
+    animation: slideUp 8s infinite alternate ease-in-out;
+  }
+  .delay-500 {
+    animation-delay: 4s;
+  }
+</style>
+
     <!-- Services -->
     <!-- About -->
     <!-- Gallery -->
@@ -103,7 +157,6 @@
     mobileNav.classList.add("-translate-x-full");
     overlay.classList.add("hidden");
   });
-
 
   
 </script>
