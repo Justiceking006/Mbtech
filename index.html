@@ -27,7 +27,52 @@
 <body class="bg-white text-gray-800 scroll-smooth overflow-x-hidden">
 
   <!-- HEADER / NAVBAR GOES HERE -->
-  <!-- We'll add this in the next step -->
+
+ <!-- HEADER COMPONENT -->
+<header class="fixed top-0 left-0 w-full z-50 bg-white shadow-md">
+  <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+    <!-- LOGO -->
+    <h1 class="text-2xl font-bold text-amber-500">Mbtec-Groups</h1>
+
+    <!-- Desktop Nav -->
+    <nav class="hidden md:flex gap-8 font-medium text-gray-800">
+      <a href="#" class="hover:text-amber-500 transition">Home</a>
+      <a href="#" class="hover:text-amber-500 transition">Services</a>
+      <a href="#" class="hover:text-amber-500 transition">Projects</a>
+      <a href="#" class="hover:text-amber-500 transition">About</a>
+      <a href="#" class="hover:text-amber-500 transition">Contact</a>
+    </nav>
+
+    <!-- Hamburger Button -->
+    <button id="menuToggle" class="md:hidden text-gray-700 focus:outline-none">
+      <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2"
+           viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round"
+              d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+    </button>
+  </div>
+</header>
+
+<!-- SLIDE-OUT MOBILE MENU -->
+<div id="mobileNav" class="fixed top-0 left-0 h-full w-64 bg-white shadow-xl z-40 transform -translate-x-full transition-transform duration-300 md:hidden">
+  <div class="p-6">
+    <h2 class="text-xl font-semibold text-amber-500 mb-4">Menu</h2>
+    <ul class="space-y-4 text-gray-700 text-lg">
+      <li><a href="#" class="block hover:text-amber-500">🏠 Home</a></li>
+      <li><a href="#" class="block hover:text-amber-500">🔧 Services</a></li>
+      <li><a href="#" class="block hover:text-amber-500">🏗️ Projects</a></li>
+      <li><a href="#" class="block hover:text-amber-500">ℹ️ About</a></li>
+      <li><a href="#" class="block hover:text-amber-500">📞 Contact</a></li>
+    </ul>
+  </div>
+</div>
+
+<!-- OVERLAY -->
+<div id="overlay" class="fixed inset-0 bg-black bg-opacity-40 hidden z-30 md:hidden"></div>
+
+
+ 
 
   <!-- MAIN SECTIONS PLACEHOLDER -->
   <main class="pt-20">
@@ -41,26 +86,27 @@
   <!-- FOOTER PLACEHOLDER -->
 
   <!-- Mobile Nav Script -->
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const btn = document.getElementById("menuToggle");
-      const menu = document.getElementById("mobileNav");
-      const overlay = document.getElementById("overlay");
-      
-      if (btn && menu && overlay) {
-        btn.addEventListener("click", () => {
-          menu.classList.remove("slide-out");
-          menu.classList.add("slide-in");
-          overlay.classList.remove("hidden");
-        });
+<!-- JS FOR TOGGLING MENU -->
+<script>
+  const btn = document.getElementById("menuToggle");
+  const mobileNav = document.getElementById("mobileNav");
+  const overlay = document.getElementById("overlay");
 
-        overlay.addEventListener("click", () => {
-          menu.classList.remove("slide-in");
-          menu.classList.add("slide-out");
-          overlay.classList.add("hidden");
-        });
-      }
-    });
-  </script>
+  btn.addEventListener("click", () => {
+    mobileNav.classList.remove("-translate-x-full");
+    mobileNav.classList.add("translate-x-0");
+    overlay.classList.remove("hidden");
+  });
+
+  overlay.addEventListener("click", () => {
+    mobileNav.classList.remove("translate-x-0");
+    mobileNav.classList.add("-translate-x-full");
+    overlay.classList.add("hidden");
+  });
+
+
+  
+</script>
+ 
 </body>
 </html>
