@@ -47,16 +47,18 @@
 <body class="bg-white text-gray-800 scroll-smooth overflow-x-hidden">
 
 <!-- ====== HEADER ====== -->
-<header class="fixed top-0 left-0 w-full z-50 bg-white shadow-md">
+<header class="fixed top-0 left-0 w-full bg-white shadow-md z-50">
   <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
     <h1 class="text-2xl font-bold text-amber-500">Mbtec-Groups</h1>
 
     <nav class="hidden md:flex gap-8 font-medium text-gray-800">
-      <a href="#" class="hover:text-amber-500 transition">Home</a>
-      <a href="#" class="hover:text-amber-500 transition">Services</a>
-      <a href="#" class="hover:text-amber-500 transition">Projects</a>
-      <a href="#" class="hover:text-amber-500 transition">About</a>
-      <a href="#" class="hover:text-amber-500 transition">Contact</a>
+      <a href="#home" class="hover:text-amber-500 transition">Home</a>
+      <a href="#services" class="hover:text-amber-500 transition">Services</a>
+      <a href="#projects" class="hover:text-amber-500 transition">Projects</a>
+      <a href="#about" class="hover:text-amber-500 transition">About</a>
+      <a href="#testimonials" class="hover:text-amber-500 transition">Testimonials</a>
+      <a href="#team" class="hover:text-amber-500 transition">Team</a>
+      <a href="#contact" class="hover:text-amber-500 transition">Contact</a>
     </nav>
 
     <!-- Hamburger Button -->
@@ -75,20 +77,19 @@
   <div class="p-6">
     <h2 class="text-xl font-semibold text-amber-500 mb-4">Menu</h2>
     <ul class="space-y-4 text-gray-700 text-lg">
-      <li><a href="#" class="block hover:text-amber-500">Home</a></li>
-      <li><a href="#" class="block hover:text-amber-500">Services</a></li>
-      <li><a href="#" class="block hover:text-amber-500">Projects</a></li>
-      <li><a href="#" class="block hover:text-amber-500">About</a></li>
-      <li><a href="#" class="block hover:text-amber-500">Contact</a></li>
+      <li><a href="#home" class="block hover:text-amber-500">Home</a></li>
+      <li><a href="#services" class="block hover:text-amber-500">Services</a></li>
+      <li><a href="#projects" class="block hover:text-amber-500">Projects</a></li>
+      <li><a href="#about" class="block hover:text-amber-500">About</a></li>
+      <li><a href="#testimonials" class="block hover:text-amber-500">Testimonials</a></li>
+      <li><a href="#team" class="block hover:text-amber-500">Team</a></li>
+      <li><a href="#contact" class="block hover:text-amber-500">Contact</a></li>
     </ul>
   </div>
 </div>
-<div id="overlay" class="fixed inset-0 bg-black bg-opacity-40 hidden z-30 md:hidden"></div>
-
-<!-- ====== HERO SECTION ====== -->
-<section class="relative w-full h-screen bg-cover bg-center flex items-center justify-center px-4 mt-[65px]"
+<div id="overlay" class="fixed inset-0 bg-black bg-opacity-40 hidden z-30 md:hidden"></div><!-- ====== HERO SECTION ====== -->
+<section id="home" class="relative w-full h-screen bg-cover bg-center flex items-center justify-center px-4 mt-[65px]"
          style="background-image: url('https://images.pexels.com/photos/8853502/pexels-photo-8853502.jpeg');">
-
   <!-- Dark Overlay -->
   <div class="absolute inset-0 bg-black/60"></div>
 
@@ -124,6 +125,7 @@
     </div>
   </div>
 </section>
+
 
   <!-- WHO WE ARE SECTION -->
 <section class="py-20 bg-gray-50 px-6">
