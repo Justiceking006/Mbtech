@@ -9,6 +9,11 @@
   <script src="https://cdn.tailwindcss.com"></script>
 
   <!-- Fonts -->
+ <!-- SwiperJS CSS -->
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     body {
@@ -192,6 +197,100 @@
   </div>
 </section>
 
+  <!-- CEO VIDEO SECTION -->
+<section class="bg-gray-50 py-20 px-4">
+  <div class="max-w-4xl mx-auto text-center">
+    <h5 class="text-amber-500 uppercase text-sm mb-2">Behind the Vision</h5>
+    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">Message from Our CEO</h2>
+    
+    <div class="aspect-w-16 aspect-h-9 shadow-lg rounded-xl overflow-hidden max-w-3xl mx-auto">
+      <iframe class="w-full h-full" src="https://www.youtube.com/embed/your-ceo-video-id" 
+              title="CEO Message Video" frameborder="0" allowfullscreen></iframe>
+    </div>
+    
+    <p class="text-gray-600 mt-6 max-w-xl mx-auto">
+      Hear from our founder as he shares the mission and passion behind Mbtec-Groups—
+      powering communities and businesses through reliable solar & electrical innovation.
+    </p>
+  </div>
+</section>
+
+  <!-- ZIG-ZAG SECTION -->
+<section class="py-20 px-4 bg-white">
+  <div class="max-w-7xl mx-auto space-y-20">
+
+    <!-- Row 1 -->
+    <div class="grid md:grid-cols-2 gap-10 items-center">
+      <!-- Text -->
+      <div>
+        <h5 class="text-amber-500 text-sm uppercase mb-2">Our Focus</h5>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Reliable Solar Installation for Every Need</h2>
+        <p class="text-gray-600 mb-6">
+          From residential rooftops to industrial sites, our team ensures efficient and long-lasting solar solutions, saving energy and powering the future.
+        </p>
+        <a href="#services" class="inline-block bg-amber-500 text-white px-6 py-2 rounded-full shadow hover:bg-amber-600 transition">
+          Learn More
+        </a>
+      </div>
+      <!-- Image -->
+      <div>
+        <img src="https://images.pexels.com/photos/8853502/pexels-photo-8853502.jpeg" class="w-full rounded-xl shadow-lg object-cover" alt="Solar Installation" />
+      </div>
+    </div>
+
+    <!-- Row 2 -->
+    <div class="grid md:grid-cols-2 gap-10 items-center md:flex-row-reverse">
+      <!-- Text -->
+      <div class="md:order-2">
+        <h5 class="text-amber-500 text-sm uppercase mb-2">Innovation</h5>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Smart Surveillance & Grid Management</h2>
+        <p class="text-gray-600 mb-6">
+          We don’t just power your building—we protect it. We install modern CCTV systems and support grid connectivity with expert precision.
+        </p>
+        <a href="#contact" class="inline-block bg-gray-800 text-white px-6 py-2 rounded-full shadow hover:bg-gray-900 transition">
+          Get In Touch
+        </a>
+      </div>
+      <!-- Image -->
+      <div class="md:order-1">
+        <img src="https://images.pexels.com/photos/11169773/pexels-photo-11169773.jpeg" class="w-full rounded-xl shadow-lg object-cover" alt="Camera Installation" />
+      </div>
+    </div>
+
+  </div>
+</section>
+  <!-- BIG SLIDESHOW SECTION -->
+<section class="py-20 bg-gray-100">
+  <div class="max-w-7xl mx-auto px-4">
+    <h2 class="text-3xl font-bold text-center text-gray-800 mb-10">Our Impact In Pictures</h2>
+
+    <!-- Swiper -->
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+
+        <!-- Slide 1 -->
+        <div class="swiper-slide">
+          <img src="https://images.pexels.com/photos/8853502/pexels-photo-8853502.jpeg" class="w-full h-[400px] object-cover rounded-xl shadow" />
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="swiper-slide">
+          <img src="https://images.pexels.com/photos/7615614/pexels-photo-7615614.jpeg" class="w-full h-[400px] object-cover rounded-xl shadow" />
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="swiper-slide">
+          <img src="https://images.pexels.com/photos/11169773/pexels-photo-11169773.jpeg" class="w-full h-[400px] object-cover rounded-xl shadow" />
+        </div>
+
+        <!-- Add more slides if you like -->
+      </div>
+
+      <!-- Pagination Dots -->
+      <div class="swiper-pagination mt-6"></div>
+    </div>
+  </div>
+</section>
   
 <!-- ====== JS FOR MOBILE MENU ====== -->
 <script>
@@ -213,6 +312,22 @@
     btn.classList.remove("active");
   });
 </script>
-
+<!-- SwiperJS Script -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+  const swiper = new Swiper(".mySwiper", {
+    loop: true,
+    grabCursor: true,
+    spaceBetween: 20,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+  });
+  </script>
 </body>
 </html>
