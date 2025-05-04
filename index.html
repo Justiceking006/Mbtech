@@ -291,18 +291,24 @@
 <section class="bg-gray-50 py-20 px-4">
   <div class="max-w-4xl mx-auto text-center">
     <h5 class="text-amber-500 uppercase text-sm mb-2">Behind the Vision</h5>
-    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">Message from Our CEO</h2>
+    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6"> Events And Projects</h2>
     
     <div class="aspect-w-16 aspect-h-9 shadow-lg rounded-xl overflow-hidden max-w-3xl mx-auto">
      <video class="rounded-2xl object-cover w-full h-48" autoplay muted loop>
           <source src="work.mp4" type="video/mp4">
         </video>
     </div>
-    
-    <p class="text-gray-600 mt-6 max-w-xl mx-auto">
-      Hear from our founder as he shares the mission and passion behind Mbtec-Groups—
-      powering communities and businesses through reliable solar & electrical innovation.
-    </p>
+  
+  </div>
+</section>
+
+  <section class="py-16 bg-[#f7f7f7]">
+  <div class="max-w-4xl mx-auto text-center">
+     <h5 class="text-amber-500 uppercase text-sm mb-2">Events And Past Project</h5>
+    <div class="relative overflow-hidden rounded-2xl shadow-lg" id="carousel">
+      <img id="carouselImage" src="https://via.placeholder.com/800x400" alt="Product" class="w-full h-96 object-cover transition duration-500">
+      <h2 id="carouselTitle" class="text-2xl font-bold text-gray-800 mt-4">Product 1</h2>
+    </div>
   </div>
 </section>
 
@@ -601,5 +607,57 @@ culture.
     },
   });
   </script>
+  
+<script>
+  const images = [
+    {
+      src: "https://via.placeholder.com/800x400?text=Solar+Panel+1",
+      title: "High-Efficiency Solar Panel"
+    },
+    {
+      src: "https://via.placeholder.com/800x400?text=Inverter+System",
+      title: "Smart Inverter System"
+    },
+    {
+      src: "https://via.placeholder.com/800x400?text=Battery+Storage",
+      title: "Lithium Battery Storage"
+    },
+    {
+      src: "https://via.placeholder.com/800x400?text=Charge+Controller",
+      title: "Advanced Charge Controller"
+    },
+    {
+      src: "https://via.placeholder.com/800x400?text=Circuit+Box",
+      title: "Safe Circuit Distribution Box"
+    },
+    {
+      src: "https://via.placeholder.com/800x400?text=Solar+Fan",
+      title: "Energy-Efficient Solar Fan"
+    },
+    {
+      src: "https://via.placeholder.com/800x400?text=Street+Light",
+      title: "Solar-Powered Street Light"
+    }
+  ];
+
+  let currentSlide = 0;
+
+  const imageElement = document.getElementById("carouselImage");
+  const titleElement = document.getElementById("carouselTitle");
+
+  function showSlide(index) {
+    imageElement.src = images[index].src;
+    titleElement.textContent = images[index].title;
+  }
+
+  function nextSlide() {
+    currentSlide = (currentSlide + 1) % images.length;
+    showSlide(currentSlide);
+  }
+
+  // Start carousel autoplay
+  setInterval(nextSlide, 3000); // Change image every 3 seconds
+</script>
+
 </body>
 </html>
